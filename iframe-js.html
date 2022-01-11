@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Testing iFrames on iPad - Javascript scrolling in a div</title>
+    <style>
+        div {
+            border: solid 1px green;
+            height:100px;
+        }
+
+        #scroller{
+            border:solid 1px #66AA66;
+            height: 400px;
+            width: 400px;
+            overflow: auto;
+        }
+    </style>
+
+    <script>
+        var scrollY = 0;
+    </script>
+
+</head>
+<body>
+    <h1>Testing iOS IFrame - Javascript scrolling</h1>
+    <div> Here are some contents.</div>
+    Iframe scrolling looks ok if you go fast (though no "momentum scroll" implemented here). But
+    notice how it jumps around if you scroll slowly.
+    <div id="scroller">
+        <iframe scrolling="no" width="100%" src="content-to-scroll3.html" ></iframe>
+    </div>
+
+    <div> Here are some additional contents.</div>
+</body>
+</html>

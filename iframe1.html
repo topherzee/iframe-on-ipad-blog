@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Testing iFrames on iOS</title>
+    <style>
+        div.content {
+            border: solid 1px green;
+
+        }
+
+        .iframe-normal{
+            border:solid 1px blue;
+            height:200px;
+            width:140px;
+        }
+
+        .inline{
+            border:solid 1px green;
+        }
+        .object{
+            border:solid 1px red;
+            width:140px;
+            height:300px;
+        }
+        .object-big{
+            display:inline-block;
+            border:solid 1px red;
+            width:800px;
+            height:2000px;
+        }
+
+        .scroll-container{
+            /*border:solid 2px yellow;*/
+            height:300px;
+            width:140px;
+            overflow:scroll;
+        }
+        .scroll-ios{
+            overflow:scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .scroll-normal{
+            overflow:scroll;
+            /*-webkit-overflow-scrolling: auto;*/
+        }
+        span{
+            display:inline-block;
+            vertical-align:top;
+        }
+        body{
+            vertical-align:top;
+        }
+    </style>
+
+
+
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+
+    <script>
+        function makePageTall(){
+            $("body").height(4000);
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Testing iOS IFrame and Div Overflow behaviour</h1>
+
+
+    <span>A.IFrame<br/> wrapped in div.<br/><br/>
+        <div class="scroll-container scroll-normal">
+            <iframe class="iframe-normal" style="display:inline-block;" src="content-to-scroll.html"></iframe>
+        </div>
+    </span>
+
+    <span>B.IFrame<br/> wrapped in div<br/> with ios scroll css.<br/>
+        <div class="scroll-container scroll-ios">
+            <iframe class="iframe-normal" style="display:inline-block;" src="content-to-scroll.html"></iframe>
+        </div>
+    </span>
+
+    <span>C.Object tag.<br/><br/><br/>
+        <object class="object" type="text/html" data="content-to-scroll.html">No Object?</object>
+    </span>
+
+    <span>D.Object tag<br/> wrapped in div<br/> with ios scroll css.<br/>
+        <div class="scroll-container scroll-ios">
+            <object class="object-big" type="text/html" data="content-to-scroll.html">No Object?</object>
+        </div>
+    </span>
+
+    <span>E.Text<br/> wrapped in div.<br/><br/>
+        <div class=" inline scroll-container scroll-normal">
+            The Earth is a very small stage in a vast cosmic arena. Think of the rivers of blood spilled by all those generals and emperors so that, in glory and triumph, they could become the momentary masters of a fraction of a dot. Think of the endless cruelties visited by the inhabitants of one corner of this pixel on the scarcely distinguishable inhabitants of some other corner, how frequent their misunderstandings, how eager they are to kill one another, how fervent their hatreds.
+
+            The surface is fine and powdery. I can kick it up loosely with my toe. It does adhere in fine layers, like powdered charcoal, to the sole and sides of my boots. I only go in a small fraction of an inch, maybe an eighth of an inch, but I can see the footprints of my boots and the treads in the fine, sandy particles. There seems to be no difficult in moving around, as we suspected.
+
+            The view of the Earth from the Moon fascinated me—a small disk, 240,000 miles away. It was hard to think that that little thing held so many problems, so many frustrations. Raging nationalistic interests, famines, wars, pestilence don't show from that distance.
+
+            The vehicle explodes, literally explodes, off the pad. The simulator shakes you a little bit, but the actual liftoff shakes your entire body and soul.
+
+            It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we've ever known.
+
+            Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every "superstar," every "supreme leader," every saint and sinner in the history of our species lived there--on a mote of dust suspended in a sunbeam.
+
+            From this day forward, Flight Control will be known by two words: 'Tough' and 'Competent.' Tough means we are forever accountable for what we do or what we fail to do. We will never again compromise our responsibilities. Every time we walk into Mission Control we will know what we stand for. Competent means we will never take anything for granted. We will never be found short in our knowledge and in our skills. Mission Control will be perfect. When you leave this meeting today you will go to your office and the first thing you will do there is to write 'Tough and Competent' on your blackboards. It will never be erased. Each day when you enter the room these words will remind you of the price paid by Grissom, White, and Chaffee. These words are the price of admission to the ranks of Mission Control.
+
+            That's one small step for [a] man; one giant leap for mankind.
+
+            Our posturings, our imagined self-importance, the delusion that we have some privileged position in the Universe, are challenged by this point of pale light. Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere to save us from ourselves.
+
+            It's just mind-blowingly awesome. I apologize, and I wish I was more articulate, but it's hard to be articulate when your mind's blown—but in a very good way.
+        </div>
+    </span>
+
+    <span>F.Text<br/>
+            wrapped in div.<br/>with ios scroll css.<br/>
+
+        <div class="inline scroll-container scroll-ios">
+            <img src="../app/assets/img/samples/1-koala-chair-by-fabio-brazil.jpeg" style="width:100px;"/>
+            <img src="../app/assets/img/samples/1-koala-chair-by-fabio-brazil.jpeg" style="width:100px;"/>
+            <img src="../app/assets/img/samples/1-koala-chair-by-fabio-brazil.jpeg" style="width:100px;"/>
+            <img src="../app/assets/img/samples/1-koala-chair-by-fabio-brazil.jpeg" style="width:100px;"/>
+
+            <div style="background:#fbff32;">The Earth is a very small stage in a vast cosmic arena. Think of the rivers of blood spilled by all those generals and emperors so that, in glory and triumph, they could become the momentary masters of a fraction of a dot. Think of the endless cruelties visited by the inhabitants of one corner of this pixel on the scarcely distinguishable inhabitants of some other corner, how frequent their misunderstandings, how eager they are to kill one another, how fervent their hatreds.
+</div>
+            <div style="background:#fbff32;">Im in a div.The surface is fine and powdery. I can kick it up loosely with my toe. It does adhere in fine layers, like powdered charcoal, to the sole and sides of my boots. I only go in a small fraction of an inch, maybe an eighth of an inch, but I can see the footprints of my boots and the treads in the fine, sandy particles. There seems to be no difficult in moving around, as we suspected.
+</div>
+            The view of the Earth from the Moon fascinated me—a small disk, 240,000 miles away. It was hard to think that that little thing held so many problems, so many frustrations. Raging nationalistic interests, famines, wars, pestilence don't show from that distance.
+
+            The vehicle explodes, literally explodes, off the pad. The simulator shakes you a little bit, but the actual liftoff shakes your entire body and soul.
+
+            It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we've ever known.
+
+            Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every "superstar," every "supreme leader," every saint and sinner in the history of our species lived there--on a mote of dust suspended in a sunbeam.
+
+            From this day forward, Flight Control will be known by two words: 'Tough' and 'Competent.' Tough means we are forever accountable for what we do or what we fail to do. We will never again compromise our responsibilities. Every time we walk into Mission Control we will know what we stand for. Competent means we will never take anything for granted. We will never be found short in our knowledge and in our skills. Mission Control will be perfect. When you leave this meeting today you will go to your office and the first thing you will do there is to write 'Tough and Competent' on your blackboards. It will never be erased. Each day when you enter the room these words will remind you of the price paid by Grissom, White, and Chaffee. These words are the price of admission to the ranks of Mission Control.
+
+            That's one small step for [a] man; one giant leap for mankind.
+
+            Our posturings, our imagined self-importance, the delusion that we have some privileged position in the Universe, are challenged by this point of pale light. Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere to save us from ourselves.
+
+            It's just mind-blowingly awesome. I apologize, and I wish I was more articulate, but it's hard to be articulate when your mind's blown—but in a very good way.
+        </div>
+    </span>
+
+
+    <div class="content">
+        Interesting:<br/>
+        <ul>
+        <li>Note how anything wrapped in ios scroll css (-webkit-overflow-scrolling: touch;) dissapears if you scroll down a bit, this is the bug.
+        <li>Anything using -webkit-overflow-scrolling: touch; looks a bit blurry. Im guessing because it is hardware accelerated.<br/>
+        <li>E. The text wrapped in a div does allow single finger scrolling with "overflow:scroll;". But this does NOT work for an
+        IFrame or Object in a div. I guess because the touch is going to the contained document, not the parent.
+        <li>Object appears to offer no benefit over IFrame
+         </ul>
+    </div>
+
+    <button id="tall-page" onclick="makePageTall();">Make Body 4000px Tall</button>
+<!--
+    <div id="overflow-test" class="scroll-ios"
+         style="border:solid 1px blue;z-index:9000;height:200px;width:300px;position:absolute;top:100px;">
+        <div id="scrollme">
+            SCROLLME.<br/>
+            <img src="assets/img/glyphicons-halflings-white.png" style="height:400px;width:400px;"/><br/>
+            I was scrolled.
+        </div>
+    </div>
+-->
+</body>
+</html>
